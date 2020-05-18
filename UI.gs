@@ -1,14 +1,26 @@
-//I am serving the bootstrap example from getbootstrap.com
-//https://getbootstrap.com/docs/4.0/examples/jumbotron/
-
-//Very sample I hope that it will worked served by GAS ;-)))
-
 function doGet(e) {
-  //This function will serve the html GET request
+  // Retrieve and process any URL parameters, as necessary.
+  //In the case below all parameters will be acepted and give the same result, you may want to update here if you want
+  if (e.parameter.edit == "form" & e.parameter.entry) {
+    return EditEntry(e.parameter.entry);
+      LoadPage();    
+  } else {
+    return LoadPage();
+  }
+    
+}
+
+
+
+
+function LoadPage() {
   var template = HtmlService.createTemplateFromFile('index');
   
+ // Build and return HTML in IFRAME sandbox mode.
   return template.evaluate()
-  .setTitle('Jumbotron Template for Bootstrap')
-  .addMetaTag('viewport', 'width=device-width, initial-scale=1, shrink-to-fit=no')
-  .setSandboxMode(HtmlService.SandboxMode.IFRAME);
+  .setTitle('Bootstrap boilerplate')
+  .addMetaTag('viewport', 'width=device-width, initial-scale=1')
+  .setFaviconUrl('https://getbootstrap.com//docs/4.5/assets/img/favicons/apple-touch-icon.png')
+  .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  
 }
