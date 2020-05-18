@@ -20,7 +20,7 @@ function LoadPage() {
   return template.evaluate()
   .setTitle('Bootstrap boilerplate')
   .addMetaTag('viewport', 'width=device-width, initial-scale=1')
-  .setFaviconUrl('https://img.icons8.com/cotton/64/000000/monitor.png')
+  .setFaviconUrl('https://getbootstrap.com//docs/4.5/assets/img/favicons/apple-touch-icon.png')
   .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
   
 }
